@@ -27,8 +27,8 @@ header .directions {
 }
 
 header .timer {
-    margin: 50px;
-    text-align: right;
+    text-align: center;
+    padding-bottom: 15px;
 }
 
 main{
