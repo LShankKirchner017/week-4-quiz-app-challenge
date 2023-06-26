@@ -1,48 +1,4 @@
-* {
+*{
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    background-color: mediumaquamarine;
-    margin: 0 auto;
-    padding: 5px 10px; 
-    
-}
-
-:root{
-    --color1: aliceblue;
-    --color2: darkslategray;
-}
-/* Title, Instructions, Highscore*/
-header{
-    display: inline;
-    text-align:center;
-    color: var(--color1);
-    font-size: 28px;
-}
-
-.directions{
-    color: var(--color2);
-    font-weight: bold;
-    line-height: 36px;
-}
-
-.highscores {
-    text-decoration: underline;
-    cursor: pointer;
-}
-
-main {
-    display: inline;
-    text-align:center;
-    color: var(--color2);
-    font-size: 28px;
-}
-
-h2, .quizQuest {
-    display: block;
-    border: 5px dotted darkslategray;
-    width: 50%;
-}
-
-ul {
-    list-style: none;
 }
 
