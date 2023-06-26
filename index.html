@@ -8,11 +8,12 @@
 </head>
 <body>
 <!-- Instructions, highscore, timer -->
-<header class="header">
-    <h1>Coding Quiz!</h1><br>
-    <p>You will have 2 minutes to complete the quiz! Any incorrect answers will deduct 2 seconds from the timer. Good luck!</p><br>
-    <p class="timer">Timer</p>
-    <p class="highscores">View Highscores</p>
+<header>
+    <h1>Coding Quiz!</h1>
+    <p class="directions">You will have 2 minutes to complete the quiz!<br>
+    Any incorrect answers will deduct 2 seconds from the timer.<br> Good luck!</p>
+      <p class="highscores">View Highscores</p>     
+    </div>
 </header>
 
 <!-- Quiz Question Card -->
@@ -29,11 +30,14 @@
     </ol>
 </main>
 
-<!--Start and Reset Buttons  -->
+<!--Start and Reset Buttons & Timer  -->
+<footer>
     <div class="buttonCard">
         <button class="start-button btn_style">Start</button>
         <button class="reset-button btn_style">Reset</button>
     </div>
+    <p class="timer">Timer</p>
+</footer>
 <script src="./assets/script.js"></script>
 </body>
 </html>

@@ -1,16 +1,22 @@
 * {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    padding: 0;
-    margin: 0;
-
+    background-color: mediumaquamarine;
+    
 }
 
-:root {
-    background: mediumaquamarine;
-    textColor: rgb(25,29,29);
+:root{
+    --color1: aliceblue;
+    --color2: darkslategray;
+}
+/* Title, Instructions, Highscore*/
+header{
+    display: inline;
+    text-align:center;
+    margin: 0 auto;
+    color: var(--color1);
+    font-size: 28px;
 }
 
-body {
-    background-color: var(--background);
-    color: var(--textColor);
+.directions{
+    color: var(--color2);
 }
