@@ -19,4 +19,12 @@ header{
 
 .directions{
     color: var(--color2);
+    font-weight: bold;
+    line-height: 36px;
 }
+
+.highscores {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
