@@ -3,10 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Coding Quiz App</title>
+    <title>Coding Quiz</title>
     <link rel="stylesheet" href="./assets/styles.css" />
 </head>
 <body>
+<!-- Instructions, highscore, timer -->
+<header class="header">
+    <h1>Coding Quiz!</h1><br>
+    <p>You will have 2 minutes to complete the quiz! Any incorrect answers will deduct 2 seconds from the timer. Good luck!</p><br>
+    <p class="timer">Timer</p>
+    <p class="highscores">View Highscores</p>
+</header>
+
+<!-- Quiz Question Card -->
+<main>
+    <h2 id="quizQuest">Question</h2><br>
+    <ol id="possAnsw">
+        <button id="a" class="btn">Choice 1</button>
+        <button id="b" class="btn">Choice 2</button>
+        <button id="c" class="btn">Choice 3</button>
+        <button id="d" class="btn">Choice 4</button>
+        <ul>
+            <h3 id="correctAnsw"></h3>
+        </ul>
+    </ol>
+</main>
+
+<!--Start and Reset Buttons  -->
+    <div class="buttonCard">
+        <button class="start-button btn_style">Start</button>
+        <button class="reset-button btn_style">Reset</button>
+    </div>
 <script src="./assets/script.js"></script>
 </body>
 </html>
