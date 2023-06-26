@@ -1,8 +1,5 @@
 *{
-    background-color: darkcyan;
     font-family:Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 18px;
-    font-weight: bold;
     color: #f0f8ff;
     margin: 0;
     padding: 0;
@@ -12,7 +9,11 @@
 html, body{
     height: 100%;
 }
-/* header .title {
+
+header {
+    background: darkcyan;
+}
+header .title {
     font-size: 24px; 
     text-align: center;
     margin: 20px auto;
@@ -28,7 +29,7 @@ header .directions {
 header .timer {
     margin: 50px;
     text-align: right;
-} */
+}
 
 main{
     width: 100%;
