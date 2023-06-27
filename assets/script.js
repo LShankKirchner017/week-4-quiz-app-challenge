@@ -7,12 +7,14 @@ var choiceB = document.getElementById("b");
 var choiceC = document.getElementById("c");
 var choiceD = document.getElementById("d");
 
-var startBtn = document.querySelector(".start-button")
 // press start button 
+var startBtn = document.querySelector(".start-button")
 
 // start timer
-var questionIndex = 0;
+
 // build a question bank
+var questionIndex = 0;
+
 var questions = [
     {
         question: "What does HTML stand for?",
@@ -57,14 +59,13 @@ function startQuiz (){
     //event listener 
     // display the quiz question
     displayQuestions()
-    //start a time
-  
+    // start a timer
 };
 
 function displayQuestions (){
-    //all fo the functionalityfor displaying quesitons
+    //all of the functionality for displaying quesitons
     //we make it a separate function so we can call this function multiple times
-    //we know we are going to use the questuon array multipe times and that is why we do this
+    //we know we are going to use the question array multipe times and that is why we do this
       quizQuestion.textContent = questions[questionIndex].question;
 
       choiceA.textContent = questions[questionIndex].a
@@ -74,11 +75,21 @@ function displayQuestions (){
 }
 
 // Right or wrong function 
-function checkAnswer (){
-    
+function checkAnswer(event){
+    console.log(event.target.id)
+    if(event.target.id != questions[questionIndex].correct) {
+        //deduct time
+        console.log('incorrect');
+    } 
+    questionIndex++
+    if (questionIndex === 4) {
+        //end screen
+        console.log("Quiz Finished!")
+    }
+    else {
+        displayQuestions();
+    }
 }
-
-// ask the question & show the options
 
 // remove time for incorrect answers
 
@@ -88,12 +99,14 @@ function checkAnswer (){
 
 
 // locally store initials & score
+//score is the time itself rather than a number
+
 
 //if you do startQuiz() instead of startQuiz, it will start the function right away
 startBtn.addEventListener('click', startQuiz);
 
-quizOptions.addEventListener('click', )
+quizOptions.addEventListener('click', function(event) {
+    checkAnswer(event);
+})
 
-
-
-//score is the time itself rather than a number
+//
