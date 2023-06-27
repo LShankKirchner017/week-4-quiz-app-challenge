@@ -7,83 +7,39 @@
 <link rel="stylesheet" href="./assets/reset.css" />
 <link rel="stylesheet" href="./assets/styles.css" />
 </head>
-<body onload="NextQuestion(0)"">
+<!-- Welcome & Directions, Timer -->
  <header>
     <h1 class="title">Coding Quiz</h1>
-        <h2 class="directions">Welcome to the quiz! You will have two minutes to answer questions related to coding. Any incorrect answers will remove 2 seconds from the timer. Good luck!</h2>
+        <h2 class="directions">Welcome to the quiz! You will have 60 seconds to answer questions related to coding. Any incorrect answers will remove 2 seconds from the timer. Good luck!</h2>
         <h3 class="timer">Timer:</h3>
- </header>    
+ </header>  
+ 
+ <!-- This is where the questions display -->
 <main>
-    <!-- creating a modal for when quiz ends -->
-    <div class="modal-container" id="score-modal">
-
-        <div class="modal-content-container">
-
-            <h1>Congratulations, Quiz Completed!</h1>
-
-            <div class="grade-details">
-                <p>Attempts: 10</p>
-                <p>Wrong Answers : <span id="wrong-answers"></span></p>
-                <p>Correct Answers: <span id="correct-answers"></span></p>
-            </div>
-            <div class="modal-button-container">
-                <button onclick="closerScoreModal()">Continue</button>
-            </div>
-
-        </div>
+    <h2 id="quizQuest"></h2>
+    <div>
+            <ul id="options">
+                <button id="a" class="btn"></button>
+                <button id="b" class="btn"></button>
+                <button id="c" class="btn"></button>
+                <button id="d" class="btn"></button>
+            </ul>
     </div>
-<!-- End of Modal of quiz details -->
 
-    <div class="game-quiz-container">
-
-        <div class="game-details-container">
-            <h1>Score : <span id="player-score"></span> / 10</h1>
-            <h1>Question : <span id="question-number"></span> / 10</h1>
-        </div>
-
-        <div class="game-question-container">
-            <h1 id="display-question"></h1>
-        </div>
-
-        <div class="game-options-container">
-
-            <div class="modal-container" id="option-modal">
-                
-                <div class="modal-content-container">
-                    <h2>Please Pick An Option</h2>
-
-                    <div class="modal-button-container">
-                        <button onclick="closeOptionModal()">Continue</button>
-                    </div>
-                </div>
-            </div>
-
-            <span>
-                <input type="radio" id="option-one" name="option" class="radio" value="optionA" />
-                <label for="option-one" class="option" id="option-one-label"></label>
-            </span>
-
-            <span>
-                <input type="radio" id="option-two" name="option" class="radio" value="optionB" />
-                <label for="option-two" class="option" id="option-two-label"></label>
-            </span>
-
-            <span>
-                <input type="radio" id="option-three" name="option" class="radio" value="optionC" />
-                <label for="option-three" class="option" id="option-three-label"></label>
-            </span>
-
-            <span>
-                <input type="radio" id="option-four" name="option" class="radio" value="optionD" />
-                <label for="option-four" class="option" id="option-four-label"></label>
-            </span>
-         </div>
-         
-         <div class="next-button-container">
-            <button onclick="handleNextQuestion()">Next Question</button>
-         </div>
-    </div>
+    <div id="userSelection"></div>
 </main>
+<!-- This is the Start button -->
+<div class="buttonCard">
+    <button class="start-button">Start</button>
+</div>
+
+<!-- This is where you can view highscores -->
+<footer>
+    <div class="highscores"><p>Highscores</p>
+    </div>
+
+</footer>
+
 <script src="./assets/script.js"></script>    
 </body>
 </html>
