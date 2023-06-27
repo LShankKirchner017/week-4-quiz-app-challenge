@@ -1,13 +1,15 @@
 //what do we need to make this run?
+var options = document.getElementById("options")
+var userSelection = document.getElementById("userSelection")
+var quizIndex = 0
+var start = document.querySelector(".start-button")
 // press start button 
-
 
 // start timer
 
-
-
 // ask the question & show the options
-var questAsk = document.getElementById("quizQuest")
+
+var questAsk = document.getElementById("quizQuest");
 var choiceA = document.getElementById("a")
 var choiceB = document.getElementById("b");
 var choiceC = document.getElementById("c");
@@ -55,7 +57,7 @@ var questions = [
 // do this over and over 
 
 // show the quiz 
-function displayQuiz (){}
+
 
 
 // remove time for incorrect answers
