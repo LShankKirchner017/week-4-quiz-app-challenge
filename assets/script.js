@@ -109,4 +109,4 @@ quizOptions.addEventListener('click', function(event) {
     checkAnswer(event);
 })
 
-//
+// Stuff to look into: localStorage, addEventListnener, Conditional Statements (If/Else), Event.target; 
