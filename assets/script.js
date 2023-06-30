@@ -6,12 +6,31 @@ var choiceA = document.getElementById("a")
 var choiceB = document.getElementById("b");
 var choiceC = document.getElementById("c");
 var choiceD = document.getElementById("d");
-
 // press start button 
 var startBtn = document.querySelector(".start-button")
 
 // start timer
+var timeEl = document.querySelector(".timer")
+var mainEl = document.getElementById("main")
 
+var secondsLeft = 30;
+function setTime() {
+    var timerInterval = setInterval (function() {
+        secondsLeft--;
+        timeEl.textContent = secondsLeft + " seconds until quiz ends.";
+
+        if(secondsLeft === 0) {
+            clearInterval(timerInterval);
+            sendMessage();
+        }
+    }, 1000);
+}
+
+function sendMessage() {
+    timeEl.textContent = " ";
+}
+
+setTime();
 // build a question bank
 var questionIndex = 0;
 

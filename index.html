@@ -10,12 +10,19 @@
 <!-- Welcome & Directions, Timer -->
  <header>
     <h1 class="title">Coding Quiz</h1>
-        <h2 class="directions">Welcome to the quiz! You will have 60 seconds to answer questions related to coding. Any incorrect answers will remove 2 seconds from the timer. Good luck!</h2>
+        <h2 class="highscores">Highscores</h2>
         <h3 class="timer">Timer:</h3>
  </header>  
- 
+ <!-- Start Screen -->
+ <section class="startScreen">
+    <p>Welcome to you Coding Quiz!</p><br>
+    <p>You will have 60 seconds to answer questions related to coding.</p><br>
+    <p>Any incorrect answers will remove 2
+    seconds from the timer. Good luck!</p>
+ </section>
+
  <!-- This is where the questions display -->
-<main>
+<main id="main">
     <h2 id="quizQuest"></h2>
     <div>
             <ul id="options">
@@ -25,19 +32,27 @@
                 <button id="d" class="btn"></button>
             </ul>
     </div>
+    <div id="userScore">
 
+    </div>
+    <br>
     <div id="userSelection"></div>
 </main>
+
+<!-- End Screen -->
+<section id="endofGame">
+    <h2>Good Game!</h2>
+    <p>Your final score is: </p>
+    <span id="finalScore"></span>
+    <br>
+        <form id="input">
+            <input id="initials" type="text"
+        </form>
+</section>
 <!-- This is the Start button -->
 <div class="buttonCard">
     <button class="start-button">Start</button>
 </div>
-
-<!-- This is where you can view highscores -->
-<footer>
-    <div class="highscores"><p>Highscores</p>
-    </div>
-</footer>
 
 <script src="./assets/script.js"></script>    
 </body>
