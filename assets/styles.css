@@ -3,7 +3,18 @@
     margin: 0;
     padding: 0;
 }
+body, section {
+    margin: 30px auto;
+    margin-top: 50px;
+    text-align: center;
+    padding: 10px;
+    width: 75%;
+}
 
+section {
+    font-size: 30px;
+    width: 75%;
+}
 header {
     background: darkslategray;
     color: aliceblue;
@@ -12,11 +23,6 @@ header .title {
     font-size: 40px; 
     text-align: center;
     padding: 15px;
-}
-
-header .directions {
-    text-align: center;
-    padding: 10px;
 }
 
 header .timer {
@@ -43,13 +49,25 @@ ul {
 }
 
 .start-button{
-    background-color: lime;
+    background-color: darkgreen;
     color: black;
-    width: 25%;
+    width: 10%;
     border-radius: 25px;
 }
 
 .start-button:hover{
+    background-color: darkslategray;
+    color: aliceblue;
+}
+
+.restart-button{
+    background-color: darkslateblue;
+    color: black;
+    width: 10%;
+    border-radius: 25px;
+}
+
+.restart-button:hover{
     background-color: darkslategray;
     color: aliceblue;
 }
@@ -64,4 +82,9 @@ ul {
 
 #userSelection {
     font-size: 14px;
+}
+
+#userScore {
+    font-size: 24px;
+    margin-top: 5px;
 }

@@ -6,34 +6,21 @@ var choiceA = document.getElementById("a")
 var choiceB = document.getElementById("b");
 var choiceC = document.getElementById("c");
 var choiceD = document.getElementById("d");
-// press start button 
-var startBtn = document.querySelector(".start-button")
-
-// start timer
-var timeEl = document.querySelector(".timer")
-var mainEl = document.getElementById("main")
-
-var secondsLeft = 30;
-function setTime() {
-    var timerInterval = setInterval (function() {
-        secondsLeft--;
-        timeEl.textContent = secondsLeft + " seconds until quiz ends.";
-
-        if(secondsLeft === 0) {
-            clearInterval(timerInterval);
-            sendMessage();
-        }
-    }, 1000);
-}
-
-function sendMessage() {
-    timeEl.textContent = " ";
-}
-
-setTime();
-// build a question bank
+var points = 0;
 var questionIndex = 0;
 
+// All variables needed to run 
+var welcome = document.querySelector("main")
+var restart = document.querySelector(".restart-button")
+var score = document.getElementById("userScore")
+var endofGame = document.getElementById("endofGame")
+var count = 60;
+var intervalId
+var finalScore = document.getElementById("finalScore")
+main.style = ("display: none;")
+endofGame.style = ("display: none;")
+
+// build a question bank
 var questions = [
     {
         question: "What does HTML stand for?",
@@ -71,61 +58,81 @@ var questions = [
         correct: "b",
     },
 ];
-// do this over and over 
 
 // show the quiz 
-function startQuiz (){
-    //event listener 
-    // display the quiz question
-    displayQuestions()
-    // start a timer
-};
+// function startQuiz (){
+//     //event listener 
+//     // display the quiz question
+//     displayQuestions()
+//     // start a timer
+// };
 
 function displayQuestions (){
-    //all of the functionality for displaying quesitons
-    //we make it a separate function so we can call this function multiple times
-    //we know we are going to use the question array multipe times and that is why we do this
       quizQuestion.textContent = questions[questionIndex].question;
-
       choiceA.textContent = questions[questionIndex].a
       choiceB.textContent = questions[questionIndex].b;
       choiceC.textContent = questions[questionIndex].c;
       choiceD.textContent = questions[questionIndex].d;
 }
 
-// Right or wrong function 
-function checkAnswer(event){
-    console.log(event.target.id)
-    if(event.target.id != questions[questionIndex].correct) {
-        //deduct time
-        console.log('incorrect');
-    } 
-    questionIndex++
-    if (questionIndex === 4) {
-        //end screen
-        console.log("Quiz Finished!")
+quizOptions.addEventListener('click', handleAnswerButtonClick)
+
+function handleAnswerButtonClick(event){
+        //if the user clicks a button
+        if(event.target.matches(".btn")){
+            if(event.target.id === questions[questionIndex].correct){
+            userChoice.innerText = "Correct!"
+            score.innerText = points += 5
+        }
+        else {
+            userChoice.innerText = "Incorrect"
+            score.innerText = points -= 1
+            count = count -2
+        }
+        localStorage.setItem("totalPoints", score.innerText)
+        questionIndex++
+        checkTimesUp()
+        if (questionIndex >= questionIndex.length){
+            getScore()
+            clearInterval(intervalId)
+            timer.innerText = "Good work! Want to play again?"
+            para.stye = ("dispaly: none;")
+        } else {
+            displayQuestions()
+        }
     }
-    else {
-        displayQuestions();
+ }
+
+function checkTimesUp() {
+    if (count === 0) {
+        getScore()
+        finalScore.innerText = "You lose. Try again?"
     }
 }
 
-// remove time for incorrect answers
+// final score card display
+function getScore(){
+    var totalScore= localStorage.getItem("totalPoints")
+    finalScore.innerText = totalScore
+    main.style = ("display: nonel")
+    endofGame.style = ("display: block;")
+}
 
-// end quiz
+//Quiz Start Button
+start.onclick = function(){
+    displayQuestions()
+    timer.innerText = "Begin!"
 
-// end highscore & initials
-
-
-// locally store initials & score
-//score is the time itself rather than a number
-
-
-//if you do startQuiz() instead of startQuiz, it will start the function right away
-startBtn.addEventListener('click', startQuiz);
-
-quizOptions.addEventListener('click', function(event) {
-    checkAnswer(event);
-})
-
+    intervalId = setInvertal(function() {
+        count--
+        timer.innerText= count
+        if (count <= 0) {
+            clearInterval(intervalId)
+            timer.innerText = "Time is up!"
+        }
+        checkTimesUp()
+    }, 1000)
+    main.style = "display: block;"
+    welcome.style = "display: none;"
+}
 // Stuff to look into: localStorage, addEventListnener, Conditional Statements (If/Else), Event.target; 
